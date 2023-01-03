@@ -57,9 +57,17 @@
 
       async function scanCode() {}
 
-      function openWindow() {}
+      function openWindow() {
+        liff.openWindow({
+          url: 'https://www.toskysoft.com',
+          external: true,
+        });
+      }
 
-      async function getFriendship() {}
+      async function getFriendship() {
+        const friend = await liff.getFriendship();
+        document.getElementById('friendship').append(friend.friendFlag);
+      }
 
       async function sendMsg() {
         if (liff.getContext().type !== 'none') {
@@ -116,7 +124,7 @@
         getEnvironment();
         getUserProfile();
         getContext();
-        // getFriendship()
+        getFriendship();
         // createUniversalLink()
       }
       main();
