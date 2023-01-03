@@ -51,7 +51,10 @@
 
       async function shareMsg() {}
 
-      function logOut() {}
+      function logOut() {
+        liff.logout();
+        window.location.reload();
+      }
 
       function closed() {
         liff.closeWindow();
@@ -132,6 +135,7 @@
           getContext();
           getFriendship();
         } else {
+          // login on external browser
           liff.login();
         }
 
